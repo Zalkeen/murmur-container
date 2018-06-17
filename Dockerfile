@@ -1,5 +1,5 @@
-FROM busybox:latest
-MAINTAINER Matt Kemp <matt@mattikus.com>
+FROM arm32v6/alpine:3.7
+MAINTAINER Joel Luth <joel.luth@gmail.com>
 
 ENV version=1.2.19
 
