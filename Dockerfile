@@ -2,7 +2,7 @@ FROM alpine:3.8
 LABEL maintainer="Joel Luth <joel.luth@gmail.com>"
 LABEL description="A murmur container based on alpine"
 
-ENV version=1.2.19-r4
+ENV version=1.2.19-r6
 
 # Add murmur package
 RUN apk update \
