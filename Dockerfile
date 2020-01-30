@@ -1,10 +1,10 @@
 FROM alpine:3.8
 MAINTAINER Grim Kriegor <grimkriegor@krutt.org>
 
-ENV version=1.2.19-r7
+ENV VERSION 1.2.19-r7
 
 RUN apk update \
-    && apk add murmur=${version} \
+    && apk add murmur=${VERSION} \
     && rm -rf /var/cache/apk/*
 
 ADD murmur.ini \
