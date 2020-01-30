@@ -7,11 +7,14 @@ RUN apk update \
     && apk add murmur=${version} \
     && rm -rf /var/cache/apk/*
 
-COPY murmur.ini /etc/murmur.ini
+ADD murmur.ini \
+  /etc/murmur.ini.sample
+
+ADD entrypoint.sh \
+  /entrypoint.sh
 
 EXPOSE 64738/tcp 64738/udp
 
 VOLUME ["/data"]
 
-ENTRYPOINT ["/usr/bin/murmurd", "-fg", "-v"]
-CMD ["-ini", "/etc/murmur.ini"]
+ENTRYPOINT ["/entrypoint.sh"]
