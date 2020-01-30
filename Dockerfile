@@ -1,4 +1,4 @@
-FROM arm32v6/alpine:3.7
+FROM alpine:3.8
 MAINTAINER Joel Luth <joel.luth@gmail.com>
 
 ENV version=1.2.19-r4
