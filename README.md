@@ -9,21 +9,21 @@ It's configured to look for the configuration file in `/etc/murmur.ini`.
 The recommended way to run this container is as follows:
 
 ```bash
-$ docker run -d -p 64738:64738 -p 64738:64738/udp mattikus/murmur
+$ docker run -d -p 64738:64738 -p 64738:64738/udp zalkeen/murmur
 ```
 
 To have the container store the sqlite database on your filesystem instead, you can run:
 
 ```bash
 $ docker run -d -p 64738:64738 -p 64738:64738/udp \
-    -v /path/to/data:/data mattikus/murmur
+    -v /path/to/data:/data zalkeen/murmur
 ```
 
 ## Important notes
 
 ### Getting the super-user password
 
-On first run, if you don't already have an existing state database, you'll want to look at the logs for your container to get the super-user password: 
+On first run, if you don't already have an existing state database, you'll want to look at the logs for your container to get the super-user password:
 
 ```bash
 $ docker logs murmur 2>&1 | grep Password
@@ -48,6 +48,6 @@ To run the container with your tweaked murmur.ini:
 
 ```bash
 $ docker run -d -p 64738:64738 -p 64738:64738/udp \
-    -v /path/to/murmur.ini:/etc/murmur.ini mattikus/murmur
+    -v /path/to/murmur.ini:/etc/murmur.ini zalkeen/murmur
 ```
 
