@@ -1,6 +1,6 @@
 ## Description
 
-This is a barebones docker container built using busybox and a statically compiled version of murmurd from the [official website](https://www.mumble.info).
+This is a barebones Docker container built using Alpine.
 
 It's configured to look for the configuration file in `/etc/murmur.ini`.
 
