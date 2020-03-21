@@ -9,13 +9,13 @@ operation="$1"
 version=$(grep "ENV VERSION .*" Dockerfile \
   | awk 'NF>1 {print $NF}' \
   | awk -F '-' '{print $1}')
-arch=$(uname -m)
+arch="${2:-$(uname -m)}"
 tag="$version"
 
 case "$arch" in
-  armv*   ) arch="armhf" ;;
-  aarch64 ) arch="arm64" ;;
-  *       ) arch=""      ;;
+  armv*   | armhf ) arch="armhf" ;;
+  aarch64 | arm64 ) arch="arm64" ;;
+  *               ) arch=""      ;;
 esac
 
 if [ ! -z "$arch" ]; then
