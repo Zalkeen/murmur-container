@@ -7,8 +7,8 @@ RUN apk update \
     && apk add murmur=${VERSION} \
     && rm -rf /var/cache/apk/*
 
-ADD murmur.ini \
-  /etc/murmur.ini.sample
+RUN cp /etc/murmur.ini /etc/murmur.ini.sample \
+  && sed -i 's|\(^database=\).*|\1/data/murmur.sqlite|g' /etc/murmur.ini*
 
 ADD entrypoint.sh \
   /entrypoint.sh
