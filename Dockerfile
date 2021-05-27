@@ -1,7 +1,7 @@
-FROM alpine:3.11
+FROM alpine:3.13
 MAINTAINER Grim Kriegor <grimkriegor@krutt.org>
 
-ENV VERSION 1.3.0-r4
+ENV VERSION 1.3.3-r6
 
 RUN apk update \
     && apk add murmur=${VERSION} \
